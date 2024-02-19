@@ -286,7 +286,7 @@ packages:
   isar:
     dependency: "direct main"
     description:
-      path: "packages/isar/packages/isar"
+      path: "../flutter-packages/isar/packages/isar"
       relative: true
     source: path
     version: "3.1.0+1"
@@ -301,7 +301,7 @@ packages:
   isar_generator:
     dependency: "direct dev"
     description:
-      path: "packages/isar/packages/isar_generator"
+      path: "../flutter-packages/isar/packages/isar_generator"
       relative: true
     source: path
     version: "3.1.0+1"

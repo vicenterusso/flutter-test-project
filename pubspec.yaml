@@ -16,9 +16,9 @@ dependencies:
 
 dependency_overrides:
   isar:
-    path: packages/isar/packages/isar
+    path: ../flutter-packages/isar/packages/isar
   isar_generator:
-    path: packages/isar/packages/isar_generator
+    path: ../flutter-packages/isar/packages/isar_generator
 
 dev_dependencies:
   flutter_test:
