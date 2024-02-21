@@ -4,6 +4,7 @@ import 'package:isar/isar.dart';
 
 part 'main.g.dart';
 
+
 // Define a collection
 @Collection()
 class Person {
