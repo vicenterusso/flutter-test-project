@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-  
+
     # Run this job on macOS, Windows, and Linux
     runs-on: ubuntu-latest
 
@@ -14,12 +14,12 @@ jobs:
       matrix:
         flutter-version: ['3.13.9', '3.16.9', '3.19.0'] # Specify the Flutter versions you want to use
         include:
-          - flutter-version: '3.13.9'
-            android-sdk: '33'
+          # - flutter-version: '3.13.9'
+          #   android-sdk: '33'
           - flutter-version: '3.13.9'
             android-sdk: '34'
-          - flutter-version: '3.16.9'
-            android-sdk: '33'
+          # - flutter-version: '3.16.9'
+          #   android-sdk: '33'
           - flutter-version: '3.16.9'
             android-sdk: '34'
           - flutter-version: '3.19.0'
