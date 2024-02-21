@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flutter-version: ['3.13.9', '3.16.9'] # Specify the Flutter versions you want to use
+        flutter-version: ['3.13.9', '3.16.9', '3.19.0'] # Specify the Flutter versions you want to use
         include:
           - flutter-version: '3.13.9'
             android-sdk: '33'
@@ -19,6 +19,8 @@ jobs:
           - flutter-version: '3.16.9'
             android-sdk: '33'
           - flutter-version: '3.16.9'
+            android-sdk: '34'
+          - flutter-version: '3.19.0'
             android-sdk: '34'
     steps:
       - uses: actions/checkout@v2
