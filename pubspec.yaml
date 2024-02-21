@@ -26,12 +26,12 @@ dependency_overrides:
   isar:
     # path: ../flutter-packages/isar/packages/isar
     git:
-      url: git://github.com/isar-community/isar.git
+      url: https://github.com/isar-community/isar.git
       ref: v3
   isar_generator:
     # path: ../flutter-packages/isar/packages/isar_generator
     git:
-      url: git://github.com/isar-community/isar.git
+      url: https://github.com/isar-community/isar.git
       ref: v3
 
 flutter:
