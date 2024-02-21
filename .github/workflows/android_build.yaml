@@ -1,8 +1,6 @@
-# This is a basic workflow to help you get started with using GitHub Actions for Flutter
-
 name: Flutter CI
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
