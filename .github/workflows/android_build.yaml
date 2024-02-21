@@ -1,0 +1,55 @@
+# This is a basic workflow to help you get started with using GitHub Actions for Flutter
+
+name: Flutter CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    # Run this job on macOS, Windows, and Linux
+    runs-on: ubuntu-latest
+    # Define a matrix strategy to test across multiple Flutter versions and SDKs
+    strategy:
+      matrix:
+        flutter-version: ['3.7.12', '3.13.19, '3.16.9'] # Specify the Flutter versions you want to use
+        include:
+          - flutter-version: '3.7.12'
+            android-sdk: '32'
+          - flutter-version: '3.7.12'
+            android-sdk: '33'
+          - flutter-version: '3.13.19'
+            android-sdk: '33'
+          - flutter-version: '3.13.19'
+            android-sdk: '34'
+          - flutter-version: '3.16.9'
+            android-sdk: '33'
+          - flutter-version: '3.16.9'
+            android-sdk: '34'
+    steps:
+      - uses: actions/checkout@v2
+        # Set up Flutter
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ matrix.flutter-version }}
+      # Optional: Accept licenses for the Android SDK
+      - name: Accept Android SDK licenses
+        run: yes | flutter doctor --android-licenses
+      # If you need to change the Android SDK version, modify the compileSdkVersion in your app level build.gradle
+      # For this example, you might also need to set your ANDROID_SDK_ROOT if it's required by the particular process
+      - name: Print flutter and dart version
+        run: |
+          flutter --version
+          dart --version
+      # Get Flutter dependencies
+      - name: Get dependencies
+        run: flutter pub get
+      # Adjusting the Gradle properties for different versions can be done in the workflows like this, or managed via gradle files.
+      # Run linting
+      - name: Lint
+        run: flutter analyze
+      # Optional: you can run the flutter tests as well in the CI
+      - name: Test
+        run: flutter test
+      # Run the Flutter Android Build
+      - name: Build Android APK
+        run: flutter build apk --release
