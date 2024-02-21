@@ -9,7 +9,7 @@ jobs:
     # Define a matrix strategy to test across multiple Flutter versions and SDKs
     strategy:
       matrix:
-        flutter-version: ['3.7.12', '3.13.19, '3.16.9'] # Specify the Flutter versions you want to use
+        flutter-version: ['3.7.12', '3.13.19', '3.16.9'] # Specify the Flutter versions you want to use
         include:
           - flutter-version: '3.7.12'
             android-sdk: '32'
